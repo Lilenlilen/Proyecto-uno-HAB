@@ -69,35 +69,25 @@ form.addEventListener("submit", (event) => {
     document.getElementById("submit_id").disabled = true;
   }
 
-  //Imagenes dependiendo de errores // cambiar el src con una imagen fija en html (la del soporte)
-  function display_image(src, width, height, alt) {
-    let image = document.createElement("img");
-    image.src = src;
-    image.width = width;
-    image.height = height;
-    image.alt = alt;
-    document.body.appendChild(image);
-  }
-
   if (errorCounter === 1) {
-    display_image("./imagenes/1.png", 250, 330, "primer error");
+    document.querySelector("#images").src = "/imagenes/1.png";
   } else if (errorCounter === 2) {
-    display_image("./imagenes/2.png", 250, 330, "segundo error");
+    document.querySelector("#images").src = "/imagenes/2.png";
   } else if (errorCounter === 3) {
-    display_image("./imagenes/3.png", 250, 330, "tercer error");
+    document.querySelector("#images").src = "/imagenes/3.png";
   } else if (errorCounter === 4) {
-    display_image("./imagenes/4.png", 250, 330, "cuarto error");
+    document.querySelector("#images").src = "/imagenes/4.png";
   } else if (errorCounter === 5) {
-    display_image("./imagenes/5.png", 250, 330, "quinto error");
+    document.querySelector("#images").src = "/imagenes/5.png";
   } else if (errorCounter === 6) {
-    display_image("./imagenes/6.png", 250, 330, "Game Over");
+    document.querySelector("#images").src = "/imagenes/6.png";
     document.getElementById("input").disabled = true;
     document.getElementById("submit_id").disabled = true;
   } else {
-    display_image("solo el soporte");
+    document.querySelector("#images").src = "/imagenes/7.png";
   }
 });
-// boton: reinicias los
+// boton
 
 const reiniciarButton = document.getElementById("reiniciar");
 
