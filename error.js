@@ -9,4 +9,3 @@ const validateGuessLetter = (guessLetter) => {
     window.alert("El dato introducido debe ser una letra");
   }
 };
-//prueba que no se copie en la master
