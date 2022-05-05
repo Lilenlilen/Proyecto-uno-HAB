@@ -74,6 +74,7 @@ form.addEventListener("submit", (event) => {
     const h2 = document.createElement("h2");
     main.append(h2);
     h2.textContent = "Enhorabuena, has completado la palabra";
+    document.getElementById("input").disabled = true;
   }
   //Quitamos el valor de la casilla una vez se envia la guessLetter
   form.elements.input.value = "";
@@ -101,6 +102,7 @@ form.addEventListener("submit", (event) => {
     display_image("./imagenes/5.png", 250, 330, "quinto error");
   } else if (errorCounter === 6) {
     display_image("./imagenes/6.png", 250, 330, "Game Over");
+    document.getElementById("input").disabled = true;
   } else {
     display_image("solo el soporte");
   }
