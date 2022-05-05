@@ -15,12 +15,13 @@ const random = Math.floor(Math.random() * palabras.length);
 
 const secretWord = palabras[random]; //secretWord es la palabra random que tiene que aparecer en el texto
 
-const lettersArray = []; // ["m", "e", "s", "a"](esta no aparece en pantalla) [-,-,s,a](si aparece en pantalla) usserLetter ="a" contador(imagen)=1
-for (let i = 0; i < secretWord.length; i++) {
-  console.log(secretWord[i]);
+const lettersArray = secretWord.split(""); // ["m", "e", "s", "a"](esta no aparece en pantalla) [-,-,s,a](si aparece en pantalla) usserLetter ="a" contador(imagen)=1
 
-  lettersArray.push(secretWord[i]);
-}
+// for (let i = 0; i < secretWord.length; i++) {
+//   console.log(secretWord[i]);
+
+//   lettersArray.push(secretWord[i]);
+// }
 // Aqui generamos otro array con tantos guiones como lettersArray
 const guionesArray = [];
 for (let i = 0; i < secretWord.length; i++) {
@@ -49,14 +50,14 @@ form.addEventListener("submit", (event) => {
   for (let i = 0; i < lettersArray.length; i++) {
     console.log(lettersArray[i]);
     if (lettersArray[i] === guessLetter) {
-      guionesArray[i] = guessLetter + " ";
+      guionesArray[i] = guessLetter; //ver letter-spacing en CSS
       userGuessed = true;
     }
   }
   if (!userGuessed) {
     errorCounter += 1;
   }
-  //Agregamos el nuevo contenido al p de la pantalla
+  //Agregamos el nuevo contenido al p de la pantalla [M E S A] [] //find..(ver promesas ejercicio de emails)
   p.textContent = guionesArray.join("");
   console.log(errorCounter);
   //Creamos un Array con los guiones que quedan en guionesArray
@@ -78,28 +79,20 @@ form.addEventListener("submit", (event) => {
   form.elements.input.value = "";
   //Aqui se crean los p dependiendo de guionesArray
 
-  //Imagenes dependiendo de errores
-  function display_image(src, width, height, alt) {
-    let image = document.createElement("img");
-    image.src = src;
-    image.width = width;
-    image.height = height;
-    image.alt = alt;
-    document.body.appendChild(image);
-  }
-
   if (errorCounter === 1) {
-    display_image("./imagenes/1.png", 250, 330, "primer error");
+    document.querySelector("#images").src = "/imagenes/1.png";
   } else if (errorCounter === 2) {
-    display_image("./imagenes/2.png", 250, 330, "segundo error");
+    document.querySelector("#images").src = "/imagenes/2.png";
   } else if (errorCounter === 3) {
-    display_image("./imagenes/3.png", 250, 330, "tercer error");
+    document.querySelector("#images").src = "/imagenes/3.png";
   } else if (errorCounter === 4) {
-    display_image("./imagenes/4.png", 250, 330, "cuarto error");
+    document.querySelector("#images").src = "/imagenes/4.png";
   } else if (errorCounter === 5) {
-    display_image("./imagenes/5.png", 250, 330, "quinto error");
+    document.querySelector("#images").src = "/imagenes/5.png";
   } else if (errorCounter === 6) {
-    display_image("./imagenes/6.png", 250, 330, "Game Over");
+    document.querySelector("#images").src = "/imagenes/6.png";
+  } else {
+    document.querySelector("#images").src = "/imagenes/7.png";
   }
 });
 
