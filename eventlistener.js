@@ -81,6 +81,9 @@ form.addEventListener("submit", (event) => {
     document.querySelector("#images").src = "/imagenes/5.png";
   } else if (errorCounter === 6) {
     document.querySelector("#images").src = "/imagenes/6.png";
+    const h2 = document.createElement("h2");
+    main.append(h2);
+    h2.textContent = "Ooops, no ha podido ser...sigue jugando";
     document.getElementById("input").disabled = true;
     document.getElementById("submit_id").disabled = true;
   } else {
