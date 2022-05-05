@@ -91,6 +91,9 @@ form.addEventListener("submit", (event) => {
     display_image("./imagenes/5.png", 250, 330, "quinto error");
   } else if (errorCounter === 6) {
     display_image("./imagenes/6.png", 250, 330, "Game Over");
+    const h2 = document.createElement("h2");
+    main.append(h2);
+    h2.textContent = "Ohh, no ha podido ser...sigue jugando";
     document.getElementById("input").disabled = true;
     document.getElementById("submit_id").disabled = true;
   } else {
