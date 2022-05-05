@@ -59,7 +59,21 @@ form.addEventListener("submit", (event) => {
   //Agregamos el nuevo contenido al p de la pantalla
   p.textContent = guionesArray.join("");
   console.log(errorCounter);
+  //Creamos un Array con los guiones que quedan en guionesArray
   console.log(guionesArray);
+  const guiones = guionesArray.filter((letter) => {
+    return letter === "_";
+  });
+  console.log(guiones);
+  console.log(guiones.length);
+  if (guiones.length === 0) {
+    console.log("guiones está dando vacio, por tanto: palabra completada");
+  }
+  if (guiones.length === 0 && errorCounter < 6) {
+    const h2 = document.createElement("h2");
+    main.append(h2);
+    h2.textContent = "Enhorabuena, has completado la palabra";
+  }
   //Quitamos el valor de la casilla una vez se envia la guessLetter
   form.elements.input.value = "";
   //Aqui se crean los p dependiendo de guionesArray
@@ -86,14 +100,14 @@ form.addEventListener("submit", (event) => {
     display_image("./imagenes/5.png", 250, 330, "quinto error");
   } else if (errorCounter === 6) {
     display_image("./imagenes/6.png", 250, 330, "Game Over");
-    errorCounter = 0;
-    //boton start
-  } else if (errorCounter <6 && //guionesArray completo )
-  ){ console.log("Has ganado, enhorabuena")
-  //boton start again
+  }
+  //boton start
+  //   } else if (errorCounter <6 && //guionesArray completo )
+  //   ){ console.log("Has ganado, enhorabuena")
+  //   //boton start again
 
-  }
-  else {
-    display_image("solo el soporte");
-  }
+  //   }
+  //   else {
+  //     display_image("solo el soporte");
+  //   }
 });
