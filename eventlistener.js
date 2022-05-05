@@ -13,15 +13,10 @@ const palabras = [
 
 const random = Math.floor(Math.random() * palabras.length);
 
-const secretWord = palabras[random]; //secretWord es la palabra random que tiene que aparecer en el texto
-
+const secretWord = palabras[random].toUpperCase(); //secretWord es la palabra random que tiene que aparecer en el texto
+console.log(secretWord);
 const lettersArray = secretWord.split(""); // ["m", "e", "s", "a"](esta no aparece en pantalla) [-,-,s,a](si aparece en pantalla) usserLetter ="a" contador(imagen)=1
 
-// for (let i = 0; i < secretWord.length; i++) {
-//   console.log(secretWord[i]);
-
-//   lettersArray.push(secretWord[i]);
-// }
 // Aqui generamos otro array con tantos guiones como lettersArray
 const guionesArray = [];
 for (let i = 0; i < secretWord.length; i++) {
@@ -44,11 +39,12 @@ form.addEventListener("submit", (event) => {
   //cancelamos la accion por defecto del formulario
   event.preventDefault();
   //recogemos la guessLetter del formulario
-  const guessLetter = document.querySelector("#input").value;
+  const guessLetter = document.querySelector("#input").value.toUpperCase();
+  //Quitamos el valor de la casilla una vez se envia la guessLetter
+  form.elements.input.value = "";
   let userGuessed = false;
   //comparamos con lettersArray y desvelamos en guionesLetter la letra, si está
   for (let i = 0; i < lettersArray.length; i++) {
-    console.log(lettersArray[i]);
     if (lettersArray[i] === guessLetter) {
       guionesArray[i] = guessLetter; //ver letter-spacing en CSS
       userGuessed = true;
@@ -57,27 +53,21 @@ form.addEventListener("submit", (event) => {
   if (!userGuessed) {
     errorCounter += 1;
   }
-  //Agregamos el nuevo contenido al p de la pantalla [M E S A] [] //find..(ver promesas ejercicio de emails)
+  //Agregamos el nuevo contenido al p de la pantalla
   p.textContent = guionesArray.join("");
   console.log(errorCounter);
+
+  //Vemos si quedan guiones en guionesArray, en caso FALSE, la palabra esta completa.
+  guionesArray.includes("_");
   //Creamos un Array con los guiones que quedan en guionesArray
-  console.log(guionesArray);
-  const guiones = guionesArray.filter((letter) => {
-    return letter === "_";
-  });
-  console.log(guiones);
-  console.log(guiones.length);
-  if (guiones.length === 0) {
-    console.log("guiones está dando vacio, por tanto: palabra completada");
-  }
-  if (guiones.length === 0 && errorCounter < 6) {
+
+  if (!guionesArray.includes("_") && errorCounter < 6) {
     const h2 = document.createElement("h2");
     main.append(h2);
     h2.textContent = "Enhorabuena, has completado la palabra";
+    document.getElementById("input").disabled = true;
+    document.getElementById("submit_id").disabled = true;
   }
-  //Quitamos el valor de la casilla una vez se envia la guessLetter
-  form.elements.input.value = "";
-  //Aqui se crean los p dependiendo de guionesArray
 
   //Imagenes dependiendo de errores // cambiar el src con una imagen fija en html (la del soporte)
   function display_image(src, width, height, alt) {
@@ -101,6 +91,8 @@ form.addEventListener("submit", (event) => {
     display_image("./imagenes/5.png", 250, 330, "quinto error");
   } else if (errorCounter === 6) {
     display_image("./imagenes/6.png", 250, 330, "Game Over");
+    document.getElementById("input").disabled = true;
+    document.getElementById("submit_id").disabled = true;
   } else {
     display_image("solo el soporte");
   }
