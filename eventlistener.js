@@ -15,12 +15,13 @@ const random = Math.floor(Math.random() * palabras.length);
 
 const secretWord = palabras[random]; //secretWord es la palabra random que tiene que aparecer en el texto
 
-const lettersArray = []; // ["m", "e", "s", "a"](esta no aparece en pantalla) [-,-,s,a](si aparece en pantalla) usserLetter ="a" contador(imagen)=1
-for (let i = 0; i < secretWord.length; i++) {
-  console.log(secretWord[i]);
+const lettersArray = secretWord.split(""); // ["m", "e", "s", "a"](esta no aparece en pantalla) [-,-,s,a](si aparece en pantalla) usserLetter ="a" contador(imagen)=1
 
-  lettersArray.push(secretWord[i]);
-}
+// for (let i = 0; i < secretWord.length; i++) {
+//   console.log(secretWord[i]);
+
+//   lettersArray.push(secretWord[i]);
+// }
 // Aqui generamos otro array con tantos guiones como lettersArray
 const guionesArray = [];
 for (let i = 0; i < secretWord.length; i++) {
@@ -49,14 +50,14 @@ form.addEventListener("submit", (event) => {
   for (let i = 0; i < lettersArray.length; i++) {
     console.log(lettersArray[i]);
     if (lettersArray[i] === guessLetter) {
-      guionesArray[i] = guessLetter + " ";
+      guionesArray[i] = guessLetter; //ver letter-spacing en CSS
       userGuessed = true;
     }
   }
   if (!userGuessed) {
     errorCounter += 1;
   }
-  //Agregamos el nuevo contenido al p de la pantalla
+  //Agregamos el nuevo contenido al p de la pantalla [M E S A] [] //find..(ver promesas ejercicio de emails)
   p.textContent = guionesArray.join("");
   console.log(errorCounter);
   //Creamos un Array con los guiones que quedan en guionesArray
@@ -78,7 +79,7 @@ form.addEventListener("submit", (event) => {
   form.elements.input.value = "";
   //Aqui se crean los p dependiendo de guionesArray
 
-  //Imagenes dependiendo de errores
+  //Imagenes dependiendo de errores // cambiar el src con una imagen fija en html (la del soporte)
   function display_image(src, width, height, alt) {
     let image = document.createElement("img");
     image.src = src;
@@ -100,14 +101,14 @@ form.addEventListener("submit", (event) => {
     display_image("./imagenes/5.png", 250, 330, "quinto error");
   } else if (errorCounter === 6) {
     display_image("./imagenes/6.png", 250, 330, "Game Over");
+  } else {
+    display_image("solo el soporte");
   }
-  //boton start
-  //   } else if (errorCounter <6 && //guionesArray completo )
-  //   ){ console.log("Has ganado, enhorabuena")
-  //   //boton start again
+});
+// boton: reinicias los
 
-  //   }
-  //   else {
-  //     display_image("solo el soporte");
-  //   }
+const reiniciarButton = document.getElementById("reiniciar");
+
+reiniciarButton.addEventListener("click", () => {
+  location.reload();
 });
