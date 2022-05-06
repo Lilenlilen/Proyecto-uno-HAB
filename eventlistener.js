@@ -1,4 +1,6 @@
 "use strict";
+
+// import { validateGuessLetter } from "./helpers/error.js"; //esto da error....
 const palabras = [
   "sanguijuela",
   "electrocardiograma",
