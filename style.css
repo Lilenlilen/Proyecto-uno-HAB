@@ -21,7 +21,7 @@ header > h1 {
   color: #664500;
 }
 
-main > section h2 {
+header > h2 {
   color: rgb(68, 107, 44);
   padding: 0.5rem;
   display: flex;
@@ -30,7 +30,7 @@ main > section h2 {
   text-align: center;
 }
 
-main > section > p {
+header > p {
   background-color: rgb(246, 246, 171);
   text-align: center;
   padding: 0.5rem;
@@ -90,7 +90,15 @@ figure img {
 }
 
 @media (min-width: 700px) {
+  main {
+    display: flex;
+    align-items: center;
+  }
   #guessWord {
     background-color: white;
+  }
+
+  figure img {
+    max-height: 700px;
   }
 }
