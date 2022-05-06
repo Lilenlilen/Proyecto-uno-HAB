@@ -9,3 +9,4 @@ const validateGuessLetter = (guessLetter) => {
     window.alert("El dato introducido debe ser una letra");
   }
 };
+export { validateGuessLetter };
