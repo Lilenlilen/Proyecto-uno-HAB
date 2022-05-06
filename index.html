@@ -17,16 +17,23 @@
       <h1>Juego del ahorcado</h1>
     </header>
     <main>
-      <section>
+      <section id="pepito">
+        <h2>¡Salvarle la vida a Pepito está en tus manos!</h2>
+        <p>
+          Pepito ha sido condenado a la horca, pero puede salvarse si adivinas
+          las letras de la palabra secreta.
+        </p>
+        <p>
+          Por cada fallo que cometas, colgarán partes de su cuerpo una a una y
+          si acumulas 6 fallos, su cuerpo entero quedará colgado y perderá su
+          vida.
+        </p>
+        <p>¡Ayuda a Pepito!</p>
+      </section>
+      <section id="form">
         <form name="input">
           <label for="input">Pon aquí una letra</label>
-          <input
-            id="input"
-            type="textarea"
-            name="input"
-            maxlength="1"
-            autofocus
-          />
+          <input id="input" type="text" name="input" maxlength="1" autofocus />
           <button type="submit" id="submit_id">Comprobar</button>
           <button type="reset" id="reiniciar">Reiniciar</button>
         </form>

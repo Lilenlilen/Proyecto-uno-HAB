@@ -27,7 +27,7 @@ const main = document.querySelector("main");
 // Hay que juntar guionesArray en una string
 const guessWord = guionesArray.join("");
 console.log(guessWord);
-const p = document.querySelector("p");
+const p = document.getElementById("guessWord");
 p.textContent = guessWord;
 //ponemos errores a 0
 let errorCounter = 0;
