@@ -29,6 +29,9 @@ const palabras = [
 ];
 
 const main = document.querySelector("main");
+const divBox = document.getElementById("divBox");
+
+const body = document.getElementById("body");
 const popUpGameOver = () => {
   const h2 = document.createElement("h2");
   main.append(h2);

@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:wght@400;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Permanent+Marker&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  --primarycolor: #664500;
+  --backgroundcolor: antiquewhite;
+  --green: rgb(68, 107, 44);
 }
 
 body {
@@ -19,6 +24,7 @@ header > h1 {
   padding: 2rem 0;
   text-align: center;
   color: #664500;
+  background-color: antiquewhite;
 }
 
 header > h2 {
@@ -28,6 +34,43 @@ header > h2 {
   flex-direction: column;
   padding: 2rem 0;
   text-align: center;
+}
+/* #divContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#divBox {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  background-color: ;
+} */
+
+main > h2 {
+  position: fixed;
+  top: 50%;
+  left:50%
+  align-content: center;
+  font-family: "Permanent Marker";
+  font-size: xx-large;
+  background-color: var(--green);
+  color: white;
+  padding: 2rem;
+  border-radius: 50%;
+
+  /* color: white;
+  font-size: large;
+  font-weight: bold;
+  background-color: green;
+  position: fixed;
+  top: 50%;
+  left: 50%; */
+
+  /* z-index: 1; */
 }
 
 header > p {
