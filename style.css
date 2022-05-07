@@ -15,18 +15,10 @@ body {
 header {
   padding-bottom: 1rem;
 }
-header > h1 {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
-  text-align: center;
-  color: #664500;
-  font-size: 0px;
-}
 
-header > h2 {
+header > h1 {
   color: rgb(68, 107, 44);
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -43,12 +35,13 @@ form {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  gap: 1rem;
+  gap: 0.8rem;
+  max-height: 28rem;
 }
 
 label {
   font-family: "Roboto Mono", monospace;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 input {
@@ -59,58 +52,56 @@ input {
   height: 70%;
   color: rgb(68, 107, 44);
   text-transform: uppercase;
-  padding: 5px;
-  margin: 2px;
+  padding: 0.5rem;
+  border-style: ridge;
 }
 
 button {
   font-family: "Roboto Mono", monospace;
   letter-spacing: 0.2rem;
   font-size: 1rem;
-  width: 170px;
-  height: 50px;
+  width: 15rem;
+  height: 3rem;
   padding: 10px;
   border-radius: 15px;
-
   background-color: rgb(246, 246, 171);
 }
+
 #reiniciar {
   background-color: rgb(165, 174, 189);
 }
+
 #guessWord {
   background-color: white;
   font-family: "Roboto Mono", monospace;
   letter-spacing: 1rem;
   font-size: bold;
-  padding: 1.5rem;
+  padding: 1.2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+img {
+  height: 33rem;
+}
 figure img {
-  max-width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   main {
     display: flex;
     justify-content: center;
   }
 
-  main > section > form {
-    max-height: 250px;
+  header > p {
+    padding-left: 50px;
+    padding-right: 50px;
   }
-
   #guessWord {
     background-color: white;
-  }
-
-  figure img {
-    max-height: 450px;
   }
 }
