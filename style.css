@@ -5,15 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  --primarycolor: #664500;
-  --backgroundcolor: antiquewhite;
-  --green: rgb(68, 107, 44);
-}
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: white;
+  background-color: antiquewhite;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -47,30 +42,37 @@ header > h2 {
   height: 100%;
   width: 100%;
   justify-content: center;
-  background-color: ;
 } */
 
 main > h2 {
   position: fixed;
   top: 50%;
-  left:50%
-  align-content: center;
+  left: 20%;
+  /* justify-content: center;
+  align-items: center;
+  align-content: center; */
   font-family: "Permanent Marker";
   font-size: xx-large;
-  background-color: var(--green);
+  background-color: green;
   color: white;
   padding: 2rem;
   border-radius: 50%;
+  box-shadow: 0.2rem 0.3rem 2px black;
+  animation: gameover 1s;
+  animation-fill-mode: forwards;
+}
 
-  /* color: white;
-  font-size: large;
-  font-weight: bold;
-  background-color: green;
-  position: fixed;
-  top: 50%;
-  left: 50%; */
-
-  /* z-index: 1; */
+@keyframes gameover {
+  0% {
+    transform: scale(0);
+    background-color: white;
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 header > p {
@@ -114,7 +116,7 @@ button {
 }
 
 #guessWord {
-  background-color: white;
+  background-color: antiquewhite;
   font-family: "Bowlby One SC", "Montserrat", sans-serif;
   letter-spacing: 30px;
   font-size: bold;
@@ -130,6 +132,8 @@ figure img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20%;
+  box-shadow: 0 0 4px black;
 }
 
 @media (min-width: 700px) {
