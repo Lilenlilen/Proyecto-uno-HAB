@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap");
 
 * {
@@ -8,13 +9,15 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: white;
+  background-color: antiquewhite;
   max-width: 1000px;
   margin: 0 auto;
   align-items: center;
 }
+
 header {
   padding-bottom: 1rem;
+
 }
 
 header > h1 {
@@ -23,6 +26,50 @@ header > h1 {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+/* #divContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#divBox {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+} */
+
+main > h2 {
+  position: fixed;
+  top: 50%;
+  left: 20%;
+  /* justify-content: center;
+  align-items: center;
+  align-content: center; */
+  font-family: "Permanent Marker";
+  font-size: xx-large;
+  background-color: green;
+  color: white;
+  padding: 2rem;
+  border-radius: 50%;
+  box-shadow: 0.2rem 0.3rem 2px black;
+  animation: gameover 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes gameover {
+  0% {
+    transform: scale(0);
+    background-color: white;
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 header > p {
@@ -73,7 +120,7 @@ button {
 }
 
 #guessWord {
-  background-color: white;
+ background-color: antiquewhite;  
   font-family: "Roboto Mono", monospace;
   letter-spacing: 1rem;
   padding: 0 1.2rem;
@@ -84,6 +131,8 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20%;
+  box-shadow: 0 0 4px black;
 }
 
 img {
