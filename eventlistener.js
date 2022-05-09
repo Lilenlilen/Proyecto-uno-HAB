@@ -40,7 +40,7 @@ const popUpGameOver = () => {
 };
 const popUpWinner = () => {
   const h2 = document.createElement("h2");
-  main.append(h2);
+  divContainer.append(h2);
   h2.textContent = "Enhorabuena, has salvado a Pepito";
   document.getElementById("input").disabled = true;
   document.getElementById("submit_id").disabled = true;
