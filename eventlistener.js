@@ -28,11 +28,11 @@ const palabras = [
 ];
 
 const main = document.querySelector("main");
-// const divBox = document.getElementById("divBox");
+const divContainer = document.getElementById("divContainer");
 // const body = document.getElementById("body");
 const popUpGameOver = () => {
   const h2 = document.createElement("h2");
-  main.append(h2);
+  divContainer.append(h2);
   h2.textContent = "Ooops, Pepito perdió su vida...";
   h2.style.backgroundColor = "red";
   document.getElementById("input").disabled = true;
