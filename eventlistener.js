@@ -1,6 +1,4 @@
 "use strict";
-
-// import { validateGuessLetter } from "./helpers/error.js"; //esto da error....
 const palabras = [
   "sanguijuela",
   "cocodrilo",
@@ -26,10 +24,9 @@ const palabras = [
   "tila",
   "kiwi",
 ];
-
-const main = document.querySelector("main");
+//Funcion finalizacion del juego: GameOver y popUpWinner
 const divContainer = document.getElementById("divContainer");
-// const body = document.getElementById("body");
+
 const popUpGameOver = () => {
   const h2 = document.createElement("h2");
   divContainer.append(h2);
@@ -38,6 +35,7 @@ const popUpGameOver = () => {
   document.getElementById("input").disabled = true;
   document.getElementById("submit_id").disabled = true;
 };
+
 const popUpWinner = () => {
   const h2 = document.createElement("h2");
   divContainer.append(h2);
@@ -45,6 +43,8 @@ const popUpWinner = () => {
   document.getElementById("input").disabled = true;
   document.getElementById("submit_id").disabled = true;
 };
+
+//Contador de errores con Imagenes
 let errorCounter = 0;
 const errorImages = () => {
   if (errorCounter === 1) {
@@ -64,6 +64,8 @@ const errorImages = () => {
     document.querySelector("#images").src = "/imagenes/7.png";
   }
 };
+
+//Validacion del input
 const validateGuessLetter = (guessLetter) => {
   try {
     if (!isNaN(guessLetter))
@@ -73,10 +75,13 @@ const validateGuessLetter = (guessLetter) => {
     window.alert("El dato introducido debe ser una letra");
   }
 };
-const gameStart = () => {
-  const random = Math.floor(Math.random() * palabras.length);
 
-  const secretWord = palabras[random].toUpperCase(); //secretWord es la palabra random que tiene que aparecer en el texto
+//Funcion Juego
+const gameStart = () => {
+  //Seleccion de palabra random
+  const random = Math.floor(Math.random() * palabras.length);
+  //secretWord es la palabra random que tiene que aparecer en el texto
+  const secretWord = palabras[random].toUpperCase();
   console.log(secretWord);
   const lettersArray = secretWord.split("");
 

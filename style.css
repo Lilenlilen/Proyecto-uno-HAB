@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:wght@400;700&family=Permanent+Marker&family=Roboto+Mono:wght@400;700&display=swap");
 
 * {
   margin: 0;
@@ -35,10 +34,6 @@ header > h1 {
 }
 
 #divContainer > h2 {
-  /*position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);*/
   font-family: "Permanent Marker";
   font-size: xx-large;
   background-color: green;
