@@ -15,13 +15,9 @@ body {
   align-items: center;
 }
 
-header {
-  padding-bottom: 1rem;
-}
-
 header > h1 {
   color: rgb(68, 107, 44);
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -87,7 +83,7 @@ form {
 }
 
 label {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Mono", m box-shadow: 0 0 4px black;onospace;
   font-size: 1.5rem;
 }
 
@@ -119,23 +115,22 @@ button {
 }
 
 #guessWord {
-  background-color: antiquewhite;
   font-family: "Roboto Mono", monospace;
   letter-spacing: 1rem;
-  padding: 0 1.2rem;
+  padding: 0.5 1.2rem;
   text-align: center;
-  box-shadow: 0 0 4px black;
 }
 
 figure {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 4px black;
 }
 
 img {
-  height: 33rem;
+  height: 28rem;
+  margin: 1rem;
+  box-shadow: 4px 4px 8px black;
 }
 @media (min-width: 600px) {
   header > p {
@@ -150,7 +145,6 @@ img {
   }
 
   #guessWord {
-    background-color: white;
     font-size: 1.8rem;
   }
 }
